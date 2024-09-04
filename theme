@@ -1,0 +1,239 @@
+```space-style
+@font-face {
+  font-family: 'Iosevka';
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  src: local('Iosevka'),
+  url('https://iosevka-webfonts.github.io/iosevka/woff2/iosevka-regular.woff2') format('woff2'),
+  url('https://iosevka-webfonts.github.io/iosevka/ttf/iosevka-regular.ttf') format('truetype');
+}
+
+html {
+  --crust: #dce0e8;
+  --mantle: #e6e9ef;
+  --base: #eff1f5;
+  --surface0: #ccd0da;
+  --surface1: #bcc0cc;
+  --surface2: #acb0be;
+  --overlay0: #9ca0b0;
+  --overlay1: #8c8fa1;
+  --overlay2: #7c7f93;
+  --subtext0: #6c6f85;
+  --subtext1: #5c5f77;
+  --text: #4c4f69;
+  --lavender: #7287fd;
+  --blue: #1e66f5;
+  --sapphire: #209fb5;
+  --sky: #04a5e5;
+  --teal: #179299;
+  --green: #40a02b;
+  --yellow: #df8e1d;
+  --peach: #fe640b;
+  --maroon: #e64553;
+  --red: #d20f39;
+  --mauve: #8839ef;
+  --pink: #ea76cb;
+  --flamingo: #dd7878;
+  --rosewater: #dc8a78;
+}
+html[data-theme="dark"] {
+  --crust: #11111b;
+  --mantle: #181825;
+  --base: #1e1e2e;
+  --surface0: #313244;
+  --surface1: #45475a;
+  --surface2: #585b70;
+  --overlay0: #6c7086;
+  --overlay1: #7f849c;
+  --overlay2: #9399b2;
+  --subtext0: #a6adc8;
+  --subtext1: #bac2de;
+  --text: #cdd6f4;
+  --lavender: #b4befe;
+  --blue: #89b4fa;
+  --sapphire: #74c7ec;
+  --sky: #89dceb;
+  --teal: #94e2d5;
+  --green: #a6e3a1;
+  --yellow: #f9e2af;
+  --peach: #fab387;
+  --maroon: #eba0ac;
+  --red: #f38ba8;
+  --mauve: #cba6f7;
+  --pink: #f5c2e7;
+  --flamingo: #f2cdcd;
+  --rosewater: #f5e0dc;
+}
+
+html, html[data-theme="dark"] {
+  --root-background-color: var(--base);
+  --root-color: var(--text);
+
+  --ui-accent-color: var(--sapphire);
+  --highlight-color: color-mix(in srgb, var(--yellow), transparent 80%);
+  --link-color: var(--blue);
+  --link-missing-color: var(--red);
+  --meta-color: inherit;
+  --meta-subtle-color: var(--subtext0);
+  --subtle-color: var(--subtext1);
+  --subtle-background-color: color-mix(in srgb, var(--surface1), transparent 80%);
+
+  --top-color: inherit;
+  --top-background-color: var(--crust);
+  --top-border-color: var(--surface0);
+  --top-sync-error-color: var(--red);
+  --top-sync-error-background-color: var(--crust);
+  --top-saved-color: var(--text);
+  --top-unsaved-color: var(--subtext0);
+  --top-loading-color: var(--overlay1);
+
+  --panel-background-color: var(--base);
+  --panel-border-color: var(--base);
+
+  --bhs-background-color: var(--base);
+  --bhs-border-color: var(--mantle);
+
+  --modal-color: inherit;
+  --modal-background-color: var(--base);
+  --modal-border-color: var(--mantle);
+  --modal-header-label-color: var(--ui-accent-color);
+  --modal-help-background-color: var(--mantle);
+  --modal-help-color: var(--subtext0);
+  --modal-selected-option-background-color: var(--ui-accent-color);
+  --modal-selected-option-color: var(--base);
+  --modal-hint-background-color: var(--ui-accent-color);
+  --modal-hint-color: var(--base);
+  --modal-description-color: inherit;
+
+  --notifications-background-color: inherit;
+  --notifications-border-color: var(--surface0);
+  --notification-info-background-color: color-mix(in srgb, var(--blue), #FFF 80%);
+  --notification-error-background-color: color-mix(in srgb, var(--red), #FFF 80%);
+
+  --action-button-background-color: transparent;
+  --action-button-color: var(--text);
+  --action-button-hover-color: var(--blue);
+  --action-button-active-color: var(--blue);
+
+  --editor-caret-color: var(--text);
+  --editor-selection-background-color: color-mix(in srgb, var(--ui-accent-color), transparent 80%);
+  --editor-panels-bottom-color: var(--subtext0);
+  --editor-panels-bottom-background-color: var(--mantle);
+  --editor-panels-bottom-border-color: var(--mantle);
+  --editor-completion-detail-color: var(--subtext0);
+  --editor-completion-detail-selected-color: var(--base);
+  --editor-list-bullet-color: var(--text);
+  --editor-heading-color: var(--text);
+  --editor-heading-meta-color: var(--meta-subtle-color);
+  --editor-hashtag-background-color: var(--ui-accent-color);
+  --editor-hashtag-color: var(--base);
+  --editor-hashtag-border-color: var(--ui-accent-color);
+  --editor-ruler-color: var(--subtext0);
+  --editor-code-color: var(--text);
+  --editor-naked-url-color: var(--link-color);
+  --editor-link-color: var(--link-color);
+  --editor-link-url-color: var(--link-color);
+  --editor-wiki-link-page-color: var(--link-color);
+  --editor-wiki-link-page-background-color: transparent;
+  --editor-wiki-link-page-missing-color: var(--link-missing-color);
+  --editor-link-meta-color: var(--meta-subtle-color);
+  --editor-named-anchor-color: var(--meta-subtle-color);
+  --editor-command-button-color: inherit;
+  --editor-command-button-background-color: var(--mantle);
+  --editor-command-button-hover-background-color: inherit;
+  --editor-command-button-meta-color: var(--meta-subtle-color);
+  --editor-command-button-border-color: var(--crust);
+  --editor-line-meta-color: var(--meta-subtle-color);
+  --editor-meta-color: var(--meta-color);
+  --editor-table-head-background-color: var(--text);
+  --editor-table-head-color: var(--base);
+  --editor-table-even-background-color: var(--mantle);
+  --editor-blockquote-background-color: var(--base);
+  --editor-blockquote-color: var(--subtle-color);
+  --editor-blockquote-border-color: var(--text);
+  --editor-code-background-color: var(--subtle-background-color);
+  --editor-struct-color: var(--red);
+  --editor-highlight-background-color: var(--highlight-color);
+  --editor-code-comment-color: var(--overlay2);
+  --editor-code-variable-color: var(--blue);
+  --editor-code-typename-color: var(--yellow);
+  --editor-code-string-color: var(--green);
+  --editor-code-number-color: var(--peach);
+  --editor-code-operator-color: var(--sky);
+  --editor-code-info-color: var(--subtle-color);
+  --editor-code-atom-color: var(--blue);
+  --editor-admonition-note-border-color: var(--sapphire);
+  --editor-admonition-note-background-color: color-mix(in srgb, var(--editor-admonition-note-border-color), transparent 90%);
+  --editor-admonition-warning-border-color: var(--peach);
+  --editor-admonition-warning-background-color: color-mix(in srgb, var(--editor-admonition-warning-background-color), transparent 90%);
+  --editor-frontmatter-background-color: var(--subtle-background-color);
+  --editor-frontmatter-color: var(--subtle-color);
+  --editor-frontmatter-marker-color: var(--maroon);
+  --editor-widget-background-color: var(--base);
+  --editor-task-marker-color: var(--subtle-color);
+  --editor-task-state-color: var(--subtle-color);
+
+  --editor-directive-color: var(--text);
+  --editor-directive-background-color: var(--subtle-background-color);
+
+
+  --ui-font: "Iosevka", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --editor-font:  "Iosevka", "iA-Mono", "Menlo", "sans-serif";
+  --editor-width: 70em;
+}
+html[data-theme="dark"] {
+  --notification-info-background-color: var(--blue);
+  --notification-error-background-color: var(--red);
+  --editor-completion-detail-selected-color: var(--text);
+}
+html[data-theme="dark"] .sb-notifications { color: var(--base);}
+html[data-theme="dark"] #sb-main .cm-editor .sb-highlight {
+  color: var(--base);
+  background-color: color-mix(in srgb, var(--yellow), transparent 20%);
+  padding: 0px 5px;
+}
+
+.sb-line-blockquote { padding-left: 0.5em !important; }
+#sb-main .cm-editor .cm-task-checked { text-decoration: none !important; }
+#sb-main .cm-editor .sb-wiki-link-page{ padding: 0; }
+.sb-markdown-top-widget ul { padding-left: 20px; }
+.sb-markdown-widget {border-left: 3px solid var(--ui-accent-color) !important; padding-left: 1em;}
+.sb-h1 { color: var(--maroon); }
+.sb-h2 { color: var(--peach); }
+.sb-h3 { color: var(--green); }
+.sb-line-h4 { color: var(--blue) !important; }
+.sb-strong { color: var(--red); }
+.sb-emphasis.sb-strong { color: var(--blue); }
+.sb-wiki-link-page { text-decoration: underline !important; }
+#sb-main .cm-editor table { width: fit-content !important; }
+
+input[type="checkbox"] {
+  font-size:inherit;
+  appearance: none;
+  background-color: transparent;
+  margin: 0 !important;
+  color: var(--teal);
+  width: 1em !important;
+  height: 1em !important;
+  border: 0.1em solid var(--ui-accent-color);
+  border-radius: 0.3em;
+  vertical-align: -14%;
+}
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  box-shadow: inset 1em 1em var(--base);
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  position: absolute;
+  transform: scale(0.7);
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before { visibility: visible; }
+input[type="checkbox"]:checked { background-color: var(--ui-accent-color); }
+
+```
